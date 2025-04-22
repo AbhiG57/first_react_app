@@ -5,7 +5,7 @@ import Loader from '../../components/Loader'
 import MovieCard from '../../components/MovieCard'
 
 
-const API_URL = import.meta.env.API_URL;
+const API_URL = window.env?.API_URL;
 const API_OPTIONS = {
   method:'GET'
 }
@@ -24,6 +24,7 @@ const Movies = () => {
         setMovieList(data.movies);
         console.log(data);
         setIsLoading(false);
+        console.log("api Url",API_URL)
       } catch (error){
         console.log("Error",error);
         setIsLoading(false);
