@@ -18,10 +18,25 @@ const Movies = () => {
     const fetchMovies = async () =>{
       try {
         setIsLoading(true);
-        const endpoint = '/movies_list.json'    // API_URL + "/movies/list";
+        const endpoint = '/uir/movies_list.json'    // API_URL + "/movies/list";
         const response = await fetch(endpoint,API_OPTIONS);
         const data = await response.json();
         setMovieList(data.movies);
+        console.log(data);
+        setIsLoading(false);
+      } catch (error){
+        console.log("Error",error);
+        setIsLoading(false);
+        setMovieList([]);
+      }
+    }
+
+    const fetchDummyData = async () =>{
+      try {
+        setIsLoading(true);
+        const endpoint = '/api/backend/data'    // API_URL + "/movies/list";
+        const response = await fetch(endpoint,API_OPTIONS);
+        const data = await response.json();
         console.log(data);
         setIsLoading(false);
       } catch (error){
@@ -34,6 +49,7 @@ const Movies = () => {
   
     useEffect(() => {
       fetchMovies();
+      fetchDummyData();
     }, [])
     
    
