@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+@theme
+{
+  --font-sans:Roboto
+}
+@utility text-gradient
+{
+  @apply bg-linear-to-r from-[#D637ff] to-[#AB8BFF] bg-clip-text text-transparent;
+}
