@@ -55,7 +55,7 @@ const Movies = () => {
     
    
     return(
-      <main className='bg-gray-900 text-white h-full'>
+      <main className='dark:bg-gray-900 dark:text-white h-full'>
         <div className='pattern'/>
         <div className='wrapper text-center'>
           <header className='py-4'>
