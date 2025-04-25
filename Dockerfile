@@ -10,5 +10,5 @@ FROM nginx:alpine
 
 EXPOSE 8000
 RUN mkdir /usr/share/nginx/html/uir
-COPY --from=node /app/dist/ /usr/share/nginx/html/uir
+COPY --from=node /app/uir/ /usr/share/nginx/html/uir
 COPY --from=node /app/nginx.conf /etc/nginx/nginx.conf
